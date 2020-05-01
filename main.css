@@ -29,6 +29,12 @@
   margin: 1em auto;
 }
 
+#submitNameForm {
+  width: 80%;
+  margin: 1em auto;
+  padding: 1em;
+}
+
 #sorting-hat {
   float: right;
   width: 30%;
