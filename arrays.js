@@ -1,22 +1,22 @@
 const houses = [
   { 
     name: 'Gryffindor', 
-    color: 'red',
+    color: 'bg-danger',
     crest: 'gryffindor-crest.png'
   },
   {
     name: 'Hufflepuff', 
-    color: 'yellow',
+    color: 'bg-warning',
     crest: 'hufflepuff-crest.png'
   },
   {
     name: 'Ravenclaw', 
-    color: 'blue',
+    color: 'bg-primary',
     crest: 'ravenclaw-crest.png'
   },
   {
     name: 'Slytherin', 
-    color: 'green',
+    color: 'bg-success',
     crest: 'slytherin-crest.png'
   }
 ]

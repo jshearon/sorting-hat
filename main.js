@@ -3,7 +3,6 @@ const printToDom = (divId, textString) => {
   document.getElementById(divId).innerHTML = textString;
 }
 
-
 //activates then removes the css image shake class
 const imageShake = () => {
   const element = document.getElementById('sorting-hat');
@@ -23,7 +22,7 @@ const createForm = () => {
                 <div class="form-group">
                   <label class="sr-only" for="studentName">Name</label>
                   <input type="text" class="form-control mb-2 mr-sm-2" id="studentName" placeholder="Harry Potter">
-                  <button type="submit" class="btn btn-primary mb-2" id="submitName">Find Your House!</button>
+                  <button type="button" class="btn btn-primary mb-2" id="submitName">Find Your House!</button>
                 </div>
                 </form>`;
   printToDom('sorting-form', domString);
@@ -32,14 +31,20 @@ const createForm = () => {
 
 //creates and prints student cards from array
 const createStudentCards = () => { 
-  domString = `<form class="form-inline cards border" id="submitNameForm">
-                <div class="form-group">
-                  <label class="sr-only" for="studentName">Name</label>
-                  <input type="text" class="form-control mb-2 mr-sm-2" id="studentName" placeholder="Harry Potter">
-                  <button type="submit" class="btn btn-primary mb-2" id="submitName">Find Your House!</button>
-                </div>
-                </form>`;
-  printToDom('sorting-form', domString);
+  let domString = '';
+  for (let i=0; i < students.length; i++) {
+    let house = houses.find(house => house.name === students[i].house);
+    if (!students[i].expelled) {
+      domString += `<div class="card h-100 text-center ${house.color}">
+                      <img src="${house.crest}" class="card-img-top align-middle">
+                      <div class="card-body text-white">
+                        <h5 class="card-title">${students[i].name}</h5>
+                        <p class="card-text"><small>House ${students[i].house}</small></p>
+                      </div>
+                    </div>`;
+    }
+  }
+  printToDom('student-cards', domString);
 }
 
 //creates the sorting form and existing students in array
@@ -51,6 +56,7 @@ const sortStudents = (event) => {
   } else {
     const newStudent = {name: studentName, house: randomHouse(), expelled: false, unique: Date.now()};
     students.push(newStudent);
+    createStudentCards();
   }
   return false;
 }
