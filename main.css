@@ -1,7 +1,11 @@
 body {
-  padding: 1em;
+  padding: 0;
   margin: 0;
+  height: 100%;
+  background-color: black;
+  font-family: 'wizard_worldsimplified';
 }
+
 
 @font-face {
   font-family: 'Harry Potter Regular';
@@ -18,6 +22,25 @@ body {
     font-style: normal;
 }
 
+.jumbotron { 
+  /* background-color: transparent; */
+  background: url('https://images.ctfassets.net/usf1vwtuqyxm/2phT56DSucuUqU6Icm6mCe/79c7ad7bca59b0626fe4e2e80d188ca5/HogwartsCastle_WB_F4_HogwartsThroughTheTrees_Illust_100615_Land.jpg?fm=jpg') 0 0 no-repeat, linear-gradient(rgba(0,0,0,.5) 20%,rgba(0,0,0,1) 100%);
+  background-blend-mode: multiply;
+  /*
+  background-image: url('https://images.ctfassets.net/usf1vwtuqyxm/2phT56DSucuUqU6Icm6mCe/79c7ad7bca59b0626fe4e2e80d188ca5/HogwartsCastle_WB_F4_HogwartsThroughTheTrees_Illust_100615_Land.jpg?fm=jpg'), linear-gradient(to right, rgba(0,0,0,0.65) 0%,rgba(255,255,255,0) 48%,rgba(2,2,2,1) 100%);;
+  background-repeat: no-repeat;
+  */ 
+  background-position: center;
+  background-size: cover;
+  /*
+  animation: breath 60s linear infinite;
+  */
+}
+
+#sorting-form, #student-cards {
+  background-color: transparent;
+}
+
 .display-4 {
   font-family:'Harry Potter Regular';
   font-weight:normal;
@@ -25,19 +48,13 @@ body {
 }
 
 .lead {
-  font-family: 'wizard_worldsimplified';
   font-size: 30px;
-}
-
-.jumbotron-width {
-  width: 80%;
-  margin: 1em auto;
 }
 
 #submitNameForm {
   width: 80%;
-  margin: 1em auto;
-  padding: 1em;
+  margin: 1rem auto;
+  padding: 1rem;
 }
 
 #student-cards {
@@ -45,17 +62,54 @@ body {
   margin: auto;
 }
 
+.card {
+  width: 30%;
+  margin: 1rem auto;
+  min-width: 30%;
+  padding: 2em 0 2em 0;
+}
+
+.card img {
+  width: 80%;
+  height: auto;
+  margin: 1em;
+}
+
 #sorting-hat {
   float: right;
   width: 30%;
 }
 
-.image-shake {
-  /* Start the shake animation and make the animation last for 0.5 seconds */
-  animation: shake 0.5s;
+.subtitles {
+  color: white;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
 
-  /* When the animation is finished, start again */
+.evil-students {
+  width: 80%;
+}
+
+.darkmark {
+  color: #999;
+}
+
+.darkmark img {
+  filter: invert(80%);
+}
+
+.page-divider {
+  display: block;
+  width: 50%;
+  margin: 2em auto;
+  filter: invert(20%);
+}
+
+.image-shake {
+  animation: shake 0.5s;
   animation-iteration-count: 5;
+  transition: transform .5s ease;
 }
 
 @keyframes shake {
@@ -70,4 +124,10 @@ body {
   80% { transform: translate(-1px, -1px) rotate(1deg); }
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@keyframes breath {
+  0% { background-size: 140%; }
+ 50% { background-size: 120%; }
+100% { background-size: 100%; }
 }

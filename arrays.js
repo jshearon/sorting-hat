@@ -26,36 +26,36 @@ const students = [
     name: 'Luna Lovegood',
     house: 'Ravenclaw',
     expelled: false,
-    unique: 1588312600089
+    uniqueId: 1588312600089
   },
   {
     name: 'Neville Longbottom',
     house: 'Gryffindor',
     expelled: false,
-    unique: 1588312603950
+    uniqueId: 1588312603950
   },
   {
     name: 'Ginny Weasley',
     house: 'Gryffindor',
     expelled: false,
-    unique: 1588312605722
+    uniqueId: 1588312605722
   },
   {
     name: 'Hermione Granger',
     house: 'Gryffindor',
     expelled: false,
-    unique: 1588312606542
+    uniqueId: 1588312606542
   },
   {
     name: 'Draco Malfoy',
     house: 'Slytherin',
     expelled: true,
-    unique: 1588313343516
+    uniqueId: 1588313343516
   },
   {
     name: 'Teddy Lupin',
     house: 'Hufflepuff',
     expelled: true,
-    unique: 1588313344420
+    uniqueId: 1588313344420
   }
 ]
