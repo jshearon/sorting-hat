@@ -9,35 +9,56 @@
 </head>
 <body>
 
-  <div class="jumbotron jumbotron-width">
-    <h1 class="display-4 text-center">The Sorting Hat</h1>
-    <img src="sorting-hat.png" alt="The Sorting Hat" id="sorting-hat">
-    <p class="lead clearfix">Welcome young wizard! <br>I am the sorting hat. I will tell you in which house you will be placed.</p>
+<div class='bg'>
+ <div class="jumbotron jumbotron-width">
+    <h1 class="display-4 text-center text-white">The Sorting Hat</h1>
+    <p class="lead clearfix text-white">Welcome young wizard! <br>I am the sorting hat. I will tell you in which house you will be placed.</p>
     <hr class="my-4">
-    <p class="lead text-center">
-      <a class="btn btn-primary btn-lg" id="sortButton" href="#" role="button" data-target="formAndStudents">Begin Sorting</a>
-    </p>
+    <div class="text-center">
+      <a class="btn btn-primary btn-lg align-middle" id="sortButton" href="#" role="button" data-target="formAndStudents">Add a new First Year</a>
+    </div>
   </div>
 
   <div id="sorting-form"></div>
 
-  <div id="student-cards" class="card-columns"></div>
+  <img src="divider.png" class="page-divider">
+
+  <div id="student-cards" class="d-flex flex-row flex-wrap justify-content-start"></div>
+
+  <img src="divider.png" class="page-divider">
+
+  <div id="evil-students" class="d-flex flex-wrap justify-content-start"></div>
 
 
-  <!-- Modal -->
+  <!-- No Name Error Modal -->
 <div class="modal fade" id="no-name-dialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-body text-center">
         You must first enter a name young wizard!
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-lg " data-dismiss="modal">Close</button>
+      <div class="modal-footer text-white d-flex flex-column">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
 
+<!-- House announce modal -->
+<div class="modal fade" id="no-name-dialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        You must first enter a name young wizard!
+      </div>
+      <div class="modal-footer text-white d-flex flex-column">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
