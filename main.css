@@ -14,27 +14,21 @@ body {
   src: local('Harry Potter Regular'), url('HARRP___.woff') format('woff');
   }
 
-  @font-face {
-    font-family: 'wizard_worldsimplified';
-    src: url('wizardworld-webfont.woff2') format('woff2'),
-         url('wizardworld-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+@font-face {
+  font-family: 'wizard_worldsimplified';
+  src:  url('wizardworld-webfont.woff2') format('woff2'),
+        url('wizardworld-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 .jumbotron { 
-  /* background-color: transparent; */
   background: url('https://images.ctfassets.net/usf1vwtuqyxm/2phT56DSucuUqU6Icm6mCe/79c7ad7bca59b0626fe4e2e80d188ca5/HogwartsCastle_WB_F4_HogwartsThroughTheTrees_Illust_100615_Land.jpg?fm=jpg') 0 0 no-repeat, linear-gradient(rgba(0,0,0,.5) 20%,rgba(0,0,0,1) 100%);
   background-blend-mode: multiply;
-  /*
-  background-image: url('https://images.ctfassets.net/usf1vwtuqyxm/2phT56DSucuUqU6Icm6mCe/79c7ad7bca59b0626fe4e2e80d188ca5/HogwartsCastle_WB_F4_HogwartsThroughTheTrees_Illust_100615_Land.jpg?fm=jpg'), linear-gradient(to right, rgba(0,0,0,0.65) 0%,rgba(255,255,255,0) 48%,rgba(2,2,2,1) 100%);;
-  background-repeat: no-repeat;
-  */ 
   background-position: center;
   background-size: cover;
-  /*
-  animation: breath 60s linear infinite;
-  */
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 #sorting-form, #student-cards {
@@ -76,8 +70,8 @@ body {
 }
 
 #sorting-hat {
-  float: right;
-  width: 30%;
+  width: 50%;
+  filter: invert(80%);
 }
 
 .subtitles {
@@ -87,8 +81,15 @@ body {
   text-align: center;
 }
 
-.evil-students {
+#evil-students {
   width: 80%;
+  margin: auto;
+}
+
+#evil-students img {
+  width: 50%;
+  height: auto;
+  margin: 1em;
 }
 
 .darkmark {
@@ -126,8 +127,35 @@ body {
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-@keyframes breath {
-  0% { background-size: 140%; }
- 50% { background-size: 120%; }
-100% { background-size: 100%; }
+
+.fade-in {
+  animation: fadeIn ease 6s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; font-size: 0; }
+  50% { opacity: 0; font-size: 0;}
+  100% { opacity: 1; font-size: 5rem;}
+}
+
+#house-announce-dialog .modal-content {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#house-announce-dialog .modal-background {
+  opacity:0.1 !important;
+}
+
+#announce-house {
+  height: 2em;
+  margin: 1em auto;
+  color: white;
+}
+
+
+
+.form-group {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
