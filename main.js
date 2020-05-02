@@ -11,6 +11,16 @@ const imageShake = () => {
     element.classList.add("image-shake");
 }
 
+const houseAnnounceModal = (newHouse) => {
+  $('#house-announce-dialog').modal('show');  
+  printToDom('announce-house', newHouse + '!');
+  imageShake();  
+  document.querySelector('#announce-house').classList.add("fade-in");
+  setTimeout( function() {
+    $('#house-announce-dialog').modal('hide');
+  }, 6000);
+}
+
 //get a random house name
 const randomHouse = () => {
   return houses[Math.floor(Math.random() * houses.length)].name;
@@ -18,7 +28,7 @@ const randomHouse = () => {
 
 //creates and prints the sorting form
 const createForm = () => { 
-  domString = `<form class="form-inline cards border" id="submitNameForm">
+  domString = `<form class="form-inline cards" id="submitNameForm">
                 <div class="form-group">
                   <label class="sr-only" for="studentName">Name</label>
                   <input type="text" class="form-control mb-2 mr-sm-2" id="studentName" placeholder="First Year's Name">
@@ -31,7 +41,7 @@ const createForm = () => {
 
 //creates and prints student cards from array
 const createStudentCards = () => { 
-  let studentCards = `<h3 class="subtitles">Student At Hogwarts</h3>`;
+  let studentCards = `<h3 class="subtitles">Students At Hogwarts</h3>`;
   let evilStudentCards = `<h3 class="subtitles">Voldemort's Evil Army</h3>`;
   let uniqueIds = [];
   for (let i=0; i < students.length; i++) {
@@ -55,7 +65,7 @@ const createStudentCards = () => {
                         <h4 class="card-title text-secondary">${students[i].name}</h4>
                       </div>
                       <div class="card-body">
-                        <img src="darkmark.png" class="align-middle">
+                        <img src="darkmark.png" class="darkmark-img align-middle">
                       </div>
                       <div>
                         <h3 class="text-secondary">Agent of Evil</h3>
@@ -72,16 +82,18 @@ const createStudentCards = () => {
   }
 }
 
-//creates the sorting form and existing students in array
+//adds new student to array, shows modal, then hides modal
 const addStudent = (event) => {
   const studentName = event.target.form.elements.studentName.value;
   if (studentName == '') {
     $('#no-name-dialog').modal('show');
     return
   } else {
-    const newStudent = {name: studentName, house: randomHouse(), expelled: false, uniqueId: Date.now()};
+    const randomHouseName = randomHouse();
+    const newStudent = {name: studentName, house: randomHouseName, expelled: false, uniqueId: Date.now()};
     students.push(newStudent);
     createStudentCards();
+    houseAnnounceModal(randomHouseName);
   }
   return false;
 }
