@@ -109,7 +109,7 @@ body {
 
 .image-shake {
   animation: shake 0.5s;
-  animation-iteration-count: 5;
+  animation-iteration-count: 3;
   transition: transform .5s ease;
 }
 
@@ -129,7 +129,7 @@ body {
 
 
 .fade-in {
-  animation: fadeIn ease 6s;
+  animation: fadeIn ease 4s;
 }
 
 @keyframes fadeIn {

@@ -11,6 +11,7 @@ const imageShake = () => {
     element.classList.add("image-shake");
 }
 
+//create and destroy modal to announce new house
 const houseAnnounceModal = (newHouse) => {
   $('#house-announce-dialog').modal('show');  
   printToDom('announce-house', newHouse + '!');
@@ -18,7 +19,7 @@ const houseAnnounceModal = (newHouse) => {
   document.querySelector('#announce-house').classList.add("fade-in");
   setTimeout( function() {
     $('#house-announce-dialog').modal('hide');
-  }, 6000);
+  }, 4000);
 }
 
 //get a random house name
@@ -42,7 +43,7 @@ const createForm = () => {
 //creates and prints student cards from array
 const createStudentCards = () => { 
   let studentCards = `<h3 class="subtitles">Students At Hogwarts</h3>`;
-  let evilStudentCards = `<h3 class="subtitles">Voldemort's Evil Army</h3>`;
+  let evilStudentCards = `<h3 class="subtitles">Voldemort's Army</h3>`;
   let uniqueIds = [];
   for (let i=0; i < students.length; i++) {
     let house = houses.find(house => house.name === students[i].house);
@@ -111,6 +112,23 @@ const sortClick = (id) => {
   document.getElementById(id).addEventListener("click", createForm);
 }
 
+const compare = (a, b) => {
+  lastNameA = a.name.split(" ")[1].toLowerCase();
+  lastNameB = b.name.split(" ")[1].toLowerCase();
+  return lastNameA == lastNameB ? 0 : lastNameA > lastNameB ? 1 : -1;
+}
+
+//function to sort array by student last name 
+const sortByName = () => {
+  students.sort(compare);
+  createStudentCards();
+}
+
+// event listener for sort-by-name button
+const sortNameClick = () => {
+  document.getElementById("sort-by-name").addEventListener("click", sortByName);
+}
+
 //event listener for expel buttons
 const expelButtonClicks = () => {
   document.addEventListener('click', function (event) {
@@ -123,6 +141,7 @@ const expelButtonClicks = () => {
 
 const init = () => {
   sortClick("sortButton");
+  sortNameClick();
   createStudentCards();
 }
 
