@@ -6,7 +6,7 @@ An exercise that sorts an array of students for either Hogwart's school, or Vold
 
 ## Instructions
 
-Exercise can be run by running a local web server and opening index.html. 
+Exercise can be run by running a local web server and opening `index.html`. 
 
 ## Technologies Used
 
