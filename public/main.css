@@ -11,13 +11,13 @@ body {
   font-family: 'Harry Potter Regular';
   font-style: normal;
   font-weight: normal;
-  src: local('Harry Potter Regular'), url('HARRP___.woff') format('woff');
+  src: local('Harry Potter Regular'), url('./fonts/HARRP___.woff') format('woff');
   }
 
 @font-face {
   font-family: 'wizard_worldsimplified';
-  src:  url('wizardworld-webfont.woff2') format('woff2'),
-        url('wizardworld-webfont.woff') format('woff');
+  src:  url('./fonts/wizardworld-webfont.woff2') format('woff2'),
+        url('./fonts/wizardworld-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }

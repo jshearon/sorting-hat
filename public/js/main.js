@@ -53,7 +53,7 @@ const createStudentCards = () => {
                         <h4 class="card-title text-white">${students[i].name}</h4>
                       </div>
                       <div class="card-body">
-                        <img src="${house.crest}" class="align-middle">
+                        <img src="../images/${house.crest}" class="align-middle">
                       </div>
                       <div>
                           <button type="button" class="btn btn-outline-light mb-2 expel" id="${students[i].uniqueId}">Expelliarmus!</button>
@@ -66,7 +66,7 @@ const createStudentCards = () => {
                         <h4 class="card-title text-secondary">${students[i].name}</h4>
                       </div>
                       <div class="card-body">
-                        <img src="darkmark.png" class="darkmark-img align-middle">
+                        <img src="../images/darkmark.png" class="darkmark-img align-middle">
                       </div>
                       <div>
                         <h3 class="text-secondary">Agent of Evil</h3>
